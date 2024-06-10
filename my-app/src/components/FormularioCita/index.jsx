@@ -13,7 +13,6 @@ const FormularioCita =  ({ setCitas }) => {
             fecha,
             hora
         }
-
         setCitas(prevCitas => [...prevCitas, nuevaCita]);
         setNombre('')
         setFecha('')
@@ -21,12 +20,22 @@ const FormularioCita =  ({ setCitas }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-          <input type="text" value={nombre} onChange={(def) => setNombre(def.target.value)} placeholder="Nombre completo" />
-          <input type="date" value={fecha} onChange={(def) => setFecha(def.target.value)} placeholder="Fecha" />
-          <input type="time" value={hora} onChange={(def) => setHora(def.target.value)} placeholder="Hora" />
-          <button type="submit">Agregar Cita</button>
-        </form>
+        <div className='primera-mitad' style={{marginLeft: "15vw"}}>
+            <form style={{display: "flex", flexDirection: "column", marginBottom: "5vw"}}>
+              <label>Nombre Mascota</label>
+              <input type="text" name="mascota" class="u-full-width" placeholder="Nombre Mascota" value=""></input>
+              <label>Nombre Dueño</label>
+              <input type="text" name="propietario" class="u-full-width" placeholder="Nombre dueño de la mascota" value=""></input>
+              <label>Fecha</label>
+              <input type="date" name="fecha" class="u-full-width" value=""></input>
+              <label>Hora</label>
+              <input type="time" name="hora" class="u-full-width" value=""></input>
+              <label>Sintomas</label>
+              <textarea name="sintomas" class="u-full-width" style={{resize: "4vw", marginBottom: "2vw"}}></textarea>
+              <button type="submit" class="u-full-width button-primary">Agregar Cita</button>
+
+            </form>
+        </div>
       )
 
 }
