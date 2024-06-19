@@ -13,5 +13,18 @@ code {
 
 .primera-mitad
 {
-  width: 30%
+  width: 46%;
+  margin-right: 3%;
+}
+
+.segunda-mitad
+{
+  width: 40%;
+  text-align: center;
+}
+
+label
+{
+  margin-top: 1vw;
+  margin-bottom: 0.3vw;
 }

@@ -20,9 +20,10 @@ const FormularioCita =  ({ setCitas }) => {
     }
 
     return (
-        <div className='primera-mitad' style={{marginLeft: "15vw"}}>
+        <div style={{width: "50%", marginLeft: "19.3vw"}}>
+            <div>
             <form style={{display: "flex", flexDirection: "column", marginBottom: "5vw"}}>
-              <label>Nombre Mascota</label>
+              <label >Nombre Mascota</label>
               <input type="text" name="mascota" class="u-full-width" placeholder="Nombre Mascota" value=""></input>
               <label>Nombre Dueño</label>
               <input type="text" name="propietario" class="u-full-width" placeholder="Nombre dueño de la mascota" value=""></input>
@@ -35,6 +36,7 @@ const FormularioCita =  ({ setCitas }) => {
               <button type="submit" class="u-full-width button-primary">Agregar Cita</button>
 
             </form>
+            </div>
         </div>
       )
 
