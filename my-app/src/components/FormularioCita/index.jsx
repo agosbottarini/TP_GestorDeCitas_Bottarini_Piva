@@ -10,13 +10,11 @@ const FormularioCita = ({ setCitas }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        // Validar que todos los campos estén llenos antes de agregar la cita
         if (nombreMascota.trim() === '' || nombreDuenio.trim() === '' || fecha === '' || hora === '' || sintomas.trim() === '') {
             alert('Todos los campos son obligatorios');
             return;
         }
 
-        // Crear nueva cita
         const nuevaCita = {
             nombreMascota,
             nombreDuenio,
@@ -25,10 +23,8 @@ const FormularioCita = ({ setCitas }) => {
             sintomas
         };
 
-        // Agregar nueva cita a la lista
         setCitas(prevCitas => [...prevCitas, nuevaCita]);
 
-        // Limpiar el formulario después de agregar la cita
         setNombreMascota('');
         setNombreDuenio('');
         setFecha('');
@@ -37,7 +33,7 @@ const FormularioCita = ({ setCitas }) => {
     };
 
     return (
-        <div style={{ width: "50%", marginLeft: "19.3vw" }}>
+        <div style={{ width: "50%", marginLeft: "19.5vw" }}>
             <form style={{ display: "flex", flexDirection: "column", marginBottom: "5vw" }} onSubmit={handleSubmit}>
                 <label>Nombre Mascota</label>
                 <input type="text" name="mascota" className="u-full-width" placeholder="Nombre Mascota" value={nombreMascota} onChange={(e) => setNombreMascota(e.target.value)} />

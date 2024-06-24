@@ -4,6 +4,8 @@ body {
   font-family:Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to left, #b1c4f1, #5c8df0);
+  color: white;
 }
 
 code {
@@ -27,4 +29,39 @@ label
 {
   margin-top: 1vw;
   margin-bottom: 0.3vw;
+}
+
+.listacitas{
+  color: #000
+}
+
+.listacitas-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.listacitas-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 0.3s ease;
+}
+
+input[type="text"], input[type="date"], input[type="time"], textarea {
+  border-radius: 5px; 
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc; 
+}
+
+button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #4b6cb7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+label{
+  font-weight: bold;
 }
