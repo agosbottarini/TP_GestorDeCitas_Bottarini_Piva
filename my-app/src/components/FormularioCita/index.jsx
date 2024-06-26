@@ -32,6 +32,20 @@ const FormularioCita = ({ setCitas }) => {
         setSintomas('');
     };
 
+    const verificacionFecha = (e) => {
+        const fechaElegida = e.target.value;
+        const anioElegido = new Date(fechaElegida).getFullYear();
+        const anioActual = new Date().getFullYear();
+
+    
+        if (anioElegido < anioActual) {
+            alert('Por favor selecciona un año igual o mayor al actual.');
+            setFecha('');
+        } else {
+            setFecha(fechaElegida);
+        }
+    };
+
     return (
         <div style={{ width: "50%", marginLeft: "19.5vw" }}>
             <form style={{ display: "flex", flexDirection: "column", marginBottom: "5vw" }} onSubmit={handleSubmit}>
@@ -40,7 +54,7 @@ const FormularioCita = ({ setCitas }) => {
                 <label>Nombre Dueño</label>
                 <input type="text" name="propietario" className="u-full-width" placeholder="Nombre dueño de la mascota" value={nombreDuenio} onChange={(e) => setNombreDuenio(e.target.value)} />
                 <label>Fecha</label>
-                <input type="date" name="fecha" className="u-full-width" value={fecha} onChange={(e) => setFecha(e.target.value)} />
+                <input type="date" name="fecha" className="u-full-width" value={fecha} onChange={verificacionFecha} />
                 <label>Hora</label>
                 <input type="time" name="hora" className="u-full-width" value={hora} onChange={(e) => setHora(e.target.value)} />
                 <label>Síntomas</label>
