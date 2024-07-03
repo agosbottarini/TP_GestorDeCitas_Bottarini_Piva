@@ -47,11 +47,10 @@ const FormularioCita = ({ setCitas }) => {
         const diaActual = new Date().getDay();
 
     
-        if (anioElegido < anioActual || mesElegido < mesActual-1 || diaElegido < diaActual) {
-            alert('Por favor selecciona una fecha igual o mayor a la actual.');
-            setFecha('');
+        if (anioElegido >= anioActual && mesElegido >= mesActual && diaElegido && diaActual) {
+            setFecha(fechaElegida)
         } else {
-            setFecha(fechaElegida);
+            alert('Por favor selecciona una fecha igual o mayor a la actual.');
         }
     };
 
