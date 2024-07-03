@@ -14,16 +14,21 @@ const FormularioCita = ({ setCitas }) => {
             alert('Todos los campos son obligatorios');
             return;
         }
-
-        const nuevaCita = {
-            nombreMascota,
-            nombreDuenio,
-            fecha,
-            hora,
-            sintomas
-        };
-
+        
+        const confirmar = window.confirm("¿Confirmas tu cita?");
+        if(confirmar)
+        {
+            const nuevaCita = {
+                nombreMascota,
+                nombreDuenio,
+                fecha,
+                hora,
+                sintomas
+            };
+    
         setCitas(prevCitas => [...prevCitas, nuevaCita]);
+
+        }
 
         setNombreMascota('');
         setNombreDuenio('');
@@ -36,10 +41,14 @@ const FormularioCita = ({ setCitas }) => {
         const fechaElegida = e.target.value;
         const anioElegido = new Date(fechaElegida).getFullYear();
         const anioActual = new Date().getFullYear();
+        const mesElegido = new Date(fechaElegida).getMonth();
+        const mesActual = new Date().getMonth();
+        const diaElegido = new Date(fechaElegida).getDay();
+        const diaActual = new Date().getDay();
 
     
-        if (anioElegido < anioActual) {
-            alert('Por favor selecciona un año igual o mayor al actual.');
+        if (anioElegido < anioActual || mesElegido < mesActual-1 || diaElegido < diaActual) {
+            alert('Por favor selecciona una fecha igual o mayor a la actual.');
             setFecha('');
         } else {
             setFecha(fechaElegida);

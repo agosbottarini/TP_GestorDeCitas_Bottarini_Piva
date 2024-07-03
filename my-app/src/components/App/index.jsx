@@ -9,8 +9,13 @@ const App = () => {
 
 
   const eliminarCita = (id) => {
-      const citasActualizadas = citas.filter((cita, index) => index !== id);
-      setCitas(citasActualizadas);
+      
+
+      const confirmarEliminacion = window.confirm("¿Deseas eliminar tu cita?");
+        if(confirmarEliminacion){
+            const citasActualizadas = citas.filter((cita, index) => index !== id);
+            setCitas(citasActualizadas);
+        }
   }
 
 
